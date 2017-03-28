@@ -163,8 +163,13 @@ struct DoseMath {
         let eventualGlucoseTargets = glucoseTargetRange.value(at: eventualGlucose.startDate)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         guard minGlucose.quantity.doubleValue(for: glucoseTargetRange.unit) >= 80 else {
             return 0
+=======
+        guard minGlucose.quantity >= minimumBGGuard.quantity else {
+            return BolusRecommendation(amount: 0, pendingInsulin: pendingInsulin, notice: .glucoseBelowMinimumGuard(minGlucose: minGlucose, unit: glucoseTargetRange.unit))
+>>>>>>> LoopKit/master
 =======
         guard minGlucose.quantity >= minimumBGGuard.quantity else {
             return BolusRecommendation(amount: 0, pendingInsulin: pendingInsulin, notice: .glucoseBelowMinimumGuard(minGlucose: minGlucose, unit: glucoseTargetRange.unit))
